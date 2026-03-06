@@ -24,6 +24,7 @@ en:
     ## Information according to § 5 TMG
 
     **Matthias Hermsen**
+
     Fortweg 10  
     35463 Fernwald  
     Germany
@@ -42,6 +43,7 @@ de:
     ## Angaben gemäß § 5 TMG
 
     **Matthias Hermsen**
+
     Fortweg 10  
     35463 Fernwald 
 
@@ -59,6 +61,7 @@ tr:
     ## Alman Telemedya Yasası (TMG) § 5 uyarınca bilgiler
 
     **Matthias Hermsen**
+    
     Fortweg 10  
     35463 Fernwald
     Almanya
