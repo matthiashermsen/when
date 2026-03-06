@@ -75,6 +75,8 @@ Whether you're planning with 5 or 50 people — it works the same.
 
 The project is currently hosted on **Vercel** and uses **Neon** as its database.
 
+Check it out at https://when-sepia.vercel.app/
+
 ---
 
 ## 🚀 Running Your Own Instance
