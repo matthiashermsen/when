@@ -74,6 +74,8 @@ async function deleteScheduleVotes() {
 
 		isDeleteScheduleVotesModalOpen.value = false;
 
+    await refreshNuxtData();
+
 		toast.add({
 			title: t("deleteScheduleVotes.toast.success.title"),
 			description: t("deleteScheduleVotes.toast.success.description"),
