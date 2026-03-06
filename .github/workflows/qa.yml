@@ -1,0 +1,31 @@
+name: QA
+
+on: pull_request
+
+concurrency:
+  group: qa-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24.x"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Wait for biome to support Vue
+      # - name: Analyze code
+      #   run: npm run analyze
+
+      - name: Check if application is buildable
+        run: npm run build

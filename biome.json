@@ -1,0 +1,20 @@
+{
+	"files": {
+		"includes": [
+			"**",
+			"!node_modules",
+			"!build",
+			"!dist",
+			"!.data",
+			"!.nuxt",
+			"!.output",
+			"!server/db/migrations",
+			"!.idea",
+			"!.vscode",
+			"!.zed",
+			"!.vercel",
+			"!.netlify",
+			"!.tanstack"
+		]
+	}
+}
