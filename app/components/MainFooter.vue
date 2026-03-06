@@ -18,6 +18,11 @@ const navigationItems = computed((): NavigationMenuItem[] => [
 		to: localePath("/privacy-policy"),
 		active: route.path === localePath("/privacy-policy"),
 	},
+	{
+		label: t("imprint"),
+		to: localePath("/imprint"),
+		active: route.path === localePath("/imprint"),
+	},
 ]);
 </script>
 
@@ -39,15 +44,18 @@ const navigationItems = computed((): NavigationMenuItem[] => [
 {
   "en": {
     "termsOfService": "Terms of Service",
-    "privacyPolicy": "Privacy Policy"
+    "privacyPolicy": "Privacy Policy",
+    "imprint": "Imprint"
   },
   "de": {
     "termsOfService": "Nutzungsbedingungen",
-    "privacyPolicy": "Datenschutzerklärung"
+    "privacyPolicy": "Datenschutzerklärung",
+    "imprint": "Impressum"
   },
   "tr": {
     "termsOfService": "Hizmet Şartları",
-    "privacyPolicy": "Gizlilik Politikası"
+    "privacyPolicy": "Gizlilik Politikası",
+    "imprint": "Künye"
   }
 }
 </i18n>
