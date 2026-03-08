@@ -45,15 +45,15 @@ const accountsWithoutSessionUser = computed(() => {
 		return [];
 	}
 
-	if (user.value) {
-		return scheduleDayVotes.value.filter(
-			(account) =>
-				account.provider !== user.value?.provider &&
-				account.providerAccountID !== user.value?.providerAccountID,
-		);
+	if (!user.value) {
+		return scheduleDayVotes.value;
 	}
 
-	return scheduleDayVotes.value;
+	return scheduleDayVotes.value.filter(
+		(account) =>
+			account.provider !== user.value?.provider ||
+			account.providerAccountID !== user.value?.providerAccountID,
+	);
 });
 
 async function handleUserVote() {
