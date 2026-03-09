@@ -150,22 +150,35 @@ node .output/server/index.mjs
 
 ### Docker
 
-#### 1. Pull the Docker image
+#### 1. Prepare a local data folder for persistence
+
+```bash
+mkdir -p ./data/db
+```
+
+- Ensures PGlite and session storage can create their files
+- Data will persist even if the container is removed
+
+#### 2. Pull the Docker image
 
 ```bash
 docker pull ghcr.io/matthiashermsen/when:latest
 ```
 
-#### 2. Start the container
+#### 3. Start the container
 
 Start the container and provide the required environment variables as described above
 
 ```bash
 docker run -p 8080:3000 \
+  -v $(pwd)/data:/app/.data \
   -e NUXT_SESSION_PASSWORD=your-secret \
   -e ... \
   ghcr.io/matthiashermsen/when:latest
 ```
+
+- The volume mount ensures `.data` persists between container restarts.
+- The `./data/db` folder prevents the ENOENT error for PGlite.
 
 ---
 
