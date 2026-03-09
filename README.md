@@ -81,21 +81,74 @@ Check it out at https://when-sepia.vercel.app/
 
 ## 🚀 Running Your Own Instance
 
-You can self-host **When** easily.
+You can easily run your own instance of **When**.
 
-- Clone the repository
-- Build from source
-- Set the environment variables
+There are two ways to do this:
 
-```env
-NUXT_SESSION_PASSWORD=super-secret
-NUXT_OAUTH_GOOGLE_CLIENT_ID=oauth-google-client-id
-NUXT_OAUTH_GOOGLE_CLIENT_SECRET=oauth-google-client-secret
-NUXT_OAUTH_GOOGLE_REDIRECT_URL=https://example.com/auth/google
-NUXT_OAUTH_GITHUB_CLIENT_ID=oauth-github-client-id
-NUXT_OAUTH_GITHUB_CLIENT_SECRET=oauth-github-client-secret
-NUXT_OAUTH_GITHUB_REDIRECT_URL=https://example.com/auth/github
-DATABASE_URL=db-connection
+- **Build from source** (recommended for development)
+- **Docker** (recommended for production)
+
+Please make sure to set the environment variables:
+
+| Variable                          | Description                                                     |
+| --------------------------------- | --------------------------------------------------------------- |
+| `NUXT_SESSION_PASSWORD`           | Secret used to encrypt user sessions.                           |
+| `NUXT_OAUTH_GOOGLE_CLIENT_ID`     | Google OAuth client ID.                                         |
+| `NUXT_OAUTH_GOOGLE_CLIENT_SECRET` | Google OAuth client secret.                                     |
+| `NUXT_OAUTH_GOOGLE_REDIRECT_URL`  | Redirect URL for Google OAuth login.                            |
+| `NUXT_OAUTH_GITHUB_CLIENT_ID`     | GitHub OAuth client ID.                                         |
+| `NUXT_OAUTH_GITHUB_CLIENT_SECRET` | GitHub OAuth client secret.                                     |
+| `NUXT_OAUTH_GITHUB_REDIRECT_URL`  | Redirect URL for GitHub OAuth login.                            |
+| `DATABASE_URL`                    | PostgreSQL database connection string.                          |
+
+### Build From Source
+
+#### 1. Clone the repository
+
+```bash
+git clone https://github.com/matthiashermsen/when.git
+cd when
+```
+
+#### 2. Install the dependencies
+
+```bash
+npm install
+```
+
+#### 3. Build the application
+
+```bash
+npm run build
+```
+
+### 4. Make sure the environment variables are set
+
+Before starting the application, make sure you have configured the required environment variables as described above.
+
+#### 5. Run the build
+
+```bash
+node .output/server/index.mjs
+```
+
+### Docker
+
+#### 1. Pull the Docker image
+
+```bash
+docker pull ghcr.io/matthiashermsen/when:latest
+```
+
+#### 2. Start the container
+
+Start the container and provide the required environment variables as described above
+
+```bash
+docker run -p 8080:3000 \
+  -e NUXT_SESSION_PASSWORD=your-secret \
+  -e ... \
+  ghcr.io/matthiashermsen/when:latest
 ```
 
 ---
