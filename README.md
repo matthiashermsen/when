@@ -90,16 +90,32 @@ There are two ways to do this:
 
 Please make sure to set the environment variables:
 
-| Variable                          | Description                                                     |
-| --------------------------------- | --------------------------------------------------------------- |
-| `NUXT_SESSION_PASSWORD`           | Secret used to encrypt user sessions.                           |
-| `NUXT_OAUTH_GOOGLE_CLIENT_ID`     | Google OAuth client ID.                                         |
-| `NUXT_OAUTH_GOOGLE_CLIENT_SECRET` | Google OAuth client secret.                                     |
-| `NUXT_OAUTH_GOOGLE_REDIRECT_URL`  | Redirect URL for Google OAuth login.                            |
-| `NUXT_OAUTH_GITHUB_CLIENT_ID`     | GitHub OAuth client ID.                                         |
-| `NUXT_OAUTH_GITHUB_CLIENT_SECRET` | GitHub OAuth client secret.                                     |
-| `NUXT_OAUTH_GITHUB_REDIRECT_URL`  | Redirect URL for GitHub OAuth login.                            |
-| `DATABASE_URL`                    | PostgreSQL database connection string.                          |
+| Variable                          | Description                                   | Example                                                                 |
+| --------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------- |
+| `NUXT_SESSION_PASSWORD`           | Secret used to encrypt user sessions.         | `NUXT_SESSION_PASSWORD=3c9c6c7a7c0f8f5d9e4f8a7c6d5b4a3e`                |
+| `NUXT_OAUTH_GOOGLE_CLIENT_ID`     | Google OAuth client ID.                       | `NUXT_OAUTH_GOOGLE_CLIENT_ID=123456789012-abc123def456.apps.googleusercontent.com` |
+| `NUXT_OAUTH_GOOGLE_CLIENT_SECRET` | Google OAuth client secret.                   | `NUXT_OAUTH_GOOGLE_CLIENT_SECRET=GOCSPX-abc123def456ghi789`             |
+| `NUXT_OAUTH_GOOGLE_REDIRECT_URL`  | Redirect URL for Google OAuth login.          | `NUXT_OAUTH_GOOGLE_REDIRECT_URL=https://example.com/auth/google`        |
+| `NUXT_OAUTH_GITHUB_CLIENT_ID`     | GitHub OAuth client ID.                       | `NUXT_OAUTH_GITHUB_CLIENT_ID=Iv1.1a2b3c4d5e6f7g8h`                      |
+| `NUXT_OAUTH_GITHUB_CLIENT_SECRET` | GitHub OAuth client secret.                   | `NUXT_OAUTH_GITHUB_CLIENT_SECRET=gho_1234567890abcdef1234567890abcdef`  |
+| `NUXT_OAUTH_GITHUB_REDIRECT_URL`  | Redirect URL for GitHub OAuth login.          | `NUXT_OAUTH_GITHUB_REDIRECT_URL=https://example.com/auth/github`        |
+| `DATABASE_URL`                    | PostgreSQL database connection string.        | `DATABASE_URL=postgresql://postgres:password@localhost:5432/mydb`       |
+
+Example .env file
+
+```bash
+NUXT_SESSION_PASSWORD=3c9c6c7a7c0f8f5d9e4f8a7c6d5b4a3e
+
+NUXT_OAUTH_GOOGLE_CLIENT_ID=123456789012-abc123def456.apps.googleusercontent.com
+NUXT_OAUTH_GOOGLE_CLIENT_SECRET=GOCSPX-abc123def456ghi789
+NUXT_OAUTH_GOOGLE_REDIRECT_URL=https://example.com/auth/google
+
+NUXT_OAUTH_GITHUB_CLIENT_ID=Iv1.1a2b3c4d5e6f7g8h
+NUXT_OAUTH_GITHUB_CLIENT_SECRET=gho_1234567890abcdef1234567890abcdef
+NUXT_OAUTH_GITHUB_REDIRECT_URL=https://example.com/auth/github
+
+DATABASE_URL=postgresql://postgres:password@localhost:5432/mydb
+```
 
 ### Build From Source
 
@@ -122,7 +138,7 @@ npm install
 npm run build
 ```
 
-### 4. Make sure the environment variables are set
+#### 4. Make sure the environment variables are set
 
 Before starting the application, make sure you have configured the required environment variables as described above.
 
