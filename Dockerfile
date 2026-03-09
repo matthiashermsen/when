@@ -1,8 +1,6 @@
 FROM node:25-alpine AS build
 WORKDIR /app
 
-RUN corepack enable
-
 COPY package.json package-lock.json .npmrc ./
 
 RUN npm ci --no-audit --no-fund --verbose
