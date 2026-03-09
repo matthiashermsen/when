@@ -1,0 +1,58 @@
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Editor
+.vscode
+.idea
+.zed
+
+# Github
+.github
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Logs
+logs
+*.log*
+
+# Biome
+biome.json
+
+# Repository
+README.md
+LICENSE
+
+# Vercel
+.vercel
+
+# Netlify
+.netlify
+
+# OS
+.DS_Store
+
+# System
+*.pem
+
+# Environment
+.env
+.env.*
+
+# Node
+node_modules
+
+# Nuxt
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Nuxthub
+.data
