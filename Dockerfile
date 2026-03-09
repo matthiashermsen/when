@@ -1,18 +1,18 @@
-FROM node:22-alpine AS build
+FROM node:25-alpine AS build
 WORKDIR /app
 
 RUN corepack enable
 
 COPY package.json package-lock.json .npmrc ./
 
-RUN npm ci
+RUN npm ci --no-audit --no-fund --verbose
 
 COPY . ./
 
 RUN npm run build
 
 
-FROM node:22-alpine AS production 
+FROM node:25-alpine AS production 
 WORKDIR /app
 
 COPY --from=build /app/.output/ ./
