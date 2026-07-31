@@ -21,11 +21,11 @@ jobs:
 
       - name: Get next version
         id: get_next_version
-        uses: thenativeweb/get-next-version@2.7.4
+        uses: thenativeweb/get-next-version@2.7.5
 
       - name: Login to GitHub container registry
         if: ${{ steps.get_next_version.outputs.hasNextVersion == 'true' }}
-        uses: docker/login-action@v4
+        uses: docker/login-action@v4.5.2
         with:
           registry: ghcr.io
           username: github-actions
